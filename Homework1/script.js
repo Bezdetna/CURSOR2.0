@@ -64,3 +64,5 @@ console.log('Сума до оплати зі знижкою ' + num.toFixed(2));
 
 const netProfit = (amount / 2) - (amount / sale)
 console.log('Чистий прибуток ' + netProfit .toFixed(0))
+
+console.log(`Mаксимальна сума ${ max }, Mінімальна сума ${ min }, Сума ${ amount }, Округлення до найменшого ${ roundToLowerSum }, Округлення до сотен ${ x }, Парним чи непарним числом? ${ text }, Сумa решти ${ remainder }, Середнє значення ${value.toFixed(2)}`)
