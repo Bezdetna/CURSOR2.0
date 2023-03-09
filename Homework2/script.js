@@ -1,5 +1,5 @@
 const firstNumber = parseFloat(prompt("Choose a number N", ''))
-const firstNumberInt = Number.isInteger(firstNumber)
+let firstNumberInt = Number.isInteger(firstNumber)
 
 while(!Number.isInteger(firstNumber)){
     firstNumber = parseFloat(prompt("Choose a integer number N", ''))
@@ -8,7 +8,7 @@ while(!Number.isInteger(firstNumber)){
 console.log(firstNumber)
 
 const secondNumber = parseFloat(prompt("Choose a number M", ''))
-const secondNumberInt = Number.isInteger(secondNumber)
+let secondNumberInt = Number.isInteger(secondNumber)
 
 while(!Number.isInteger(secondNumber)){
     secondNumber = parseFloat(prompt("Choose a integer number M", ''))
