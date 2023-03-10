@@ -1,20 +1,21 @@
-const firstNumber = parseFloat(prompt("Choose a number N", ''))
-let firstNumberInt = Number.isInteger(firstNumber)
+let firstNumber = prompt("Choose a number N", '')
 
-while(!Number.isInteger(firstNumber)){
-    firstNumber = parseFloat(prompt("Choose a integer number N", ''))
-    firstNumberInt = Number.isInteger(firstNumber)
+while(true){
+    if (firstNumber % 1 === 0 && firstNumber > 0){
+        console.log(firstNumber)
+        break
+    }
+    firstNumber = prompt("Choose an integer number N biggest than 0", '')
 }
-console.log(firstNumber)
 
-const secondNumber = parseFloat(prompt("Choose a number M", ''))
-let secondNumberInt = Number.isInteger(secondNumber)
-
-while(!Number.isInteger(secondNumber)){
-    secondNumber = parseFloat(prompt("Choose a integer number M", ''))
-    secondNumberInt = Number.isInteger(secondNumber)
+let secondNumber = parseFloat(prompt("Choose a number M", ''))
+while(true){
+    if(secondNumber > firstNumber){
+        console.log(secondNumber)
+        break
+    }
+    secondNumber = prompt("Choose an integer number M biggest than N", '')
 }
-console.log(secondNumber)
 
 const intNumberBol = confirm('Чи потрібно пропускати парні числа?')
 let sum = 0

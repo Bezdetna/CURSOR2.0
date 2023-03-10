@@ -115,7 +115,31 @@ console.log( a + " / 8 = " + k)
 console.log( "остача від ділення " + a +" на "+ b + " дорівнює " + n)*/
 
 /*10
-let y = 28;
+let y = 2.8;
+
+if number y is integer and > 0
+{ console.log(y)}
+else(if number y is !integer and < 0)
+{ parseFloat(prompt("Choose a integer number N biggest then 0", ''))}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 let i = 0;
 
 for( i = 0; i <= y; i++){
@@ -130,11 +154,10 @@ for( i = 0; i <= y; i++){
 }*/
 
 /*11
-let a = prompt('Введдіть з клавіатури цифру або число')
-let b = parseFloat(a)
-let c = Number.isInteger(b)
+let a = parseFloat(prompt('Введдіть з клавіатури цифру або число'))
 
-if(c){
+
+if(Number.isInteger(a)){
     console.log("Ціле")
 }else{
     console.log("Або число не ціле, або ви ввели якусь херню")
