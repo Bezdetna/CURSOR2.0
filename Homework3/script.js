@@ -48,8 +48,8 @@ console.log(sum)
 
 //Функція, яка перевіряє, чи є слово паліндромом.
 function isPalindrome(str) {
-    const reversedStr = str.split('').reverse().join(''); // перетворюємо рядок на масив символів, обертаємо його та зливаємо знову в рядок
-    return str === reversedStr;// порівнюємо обернутий рядок з оригінальним рядком
+    const reversedStr = str.split('').reverse().join('')
+    return str === reversedStr
 }
 let wordPalindrom = isPalindrome("ротатор")
 console.log(wordPalindrom)
