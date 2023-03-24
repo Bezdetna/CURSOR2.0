@@ -8,22 +8,39 @@ const getRandomArray = ((length, min, max) =>{
 })
 const result = getRandomArray(10, 1, 100)
 console.log(result)
-2
-function getMedian(...numbers){
-    return numbers.reduce((total, numbers) => total + numbers, 0) / numbers.length;
-}
-console.log(getMedian(6, 2, 55, 11, 78, 2, 55, 77, 57, 87, 23, 2, 56, 3, 2))
+
 3
 function getAverage(...numbers) {
-    return numbers.reduce((total, numbers) => total + numbers, 0) / numbers.length;
+    const filterNum = numbers.filter(number => number % 1 == 0)
+    const result = filterNum.reduce((total, filterNum) => total + filterNum, 0) / filterNum.length;
+    return result
 }
-console.log(getAverage(2, 9, 9, 8, 6, 5, 3, 9, 1, 7, 7))
+console.log( getAverage(6, 2, 55, 11, 78, 2, 55, 77, 57, 87, 3.5, 23, 4.5, 2, 56, 3, 2))
+
+4
+function getMedian(...numbers){
+    const sortNumbers = numbers.sort((a, b) => a - b)
+    const isInteger = sortNumbers.length % 2 === 0
+    const y = []
+    if(!isInteger){
+        const x = (sortNumbers.length - 1) / 2
+        y.push(sortNumbers[x])
+    }
+    if(isInteger){
+        var midIndex1 = Math.floor((sortNumbers.length - 1) / 2);
+        var midIndex2 = Math.ceil((sortNumbers.length - 1) / 2);
+        var median = (sortNumbers[midIndex1] + sortNumbers[midIndex2]) / 2;
+        y.push(median)
+    }
+    return y
+}
+console.log(getMedian(1, 2, 3, 4))
 
 5
 function filterEvenNumbers(...numbers){
     return numbers.filter(numbers => numbers % 2 !== 0)
 }
-console.log(filterEvenNumbers (2, 5, 3, 1, 4, 8, 4))
+console.log("filterEvenNumbers  " + filterEvenNumbers (2, 5, 3, 1, 4, 8, 4))
 
 6
 function countPositiveNumbers(...numbers){
