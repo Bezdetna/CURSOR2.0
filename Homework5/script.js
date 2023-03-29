@@ -19,7 +19,8 @@ console.log( getAverage(6, 2, 55, 11, 78, 2, 55, 77, 57, 87, 3.5, 23, 4.5, 2, 56
 
 4
 function getMedian(...numbers){
-    const sortNumbers = numbers.sort((a, b) => a - b)
+    const filterNum = numbers.filter(number => number % 1 == 0)
+    const sortNumbers = filterNum.sort((a, b) => a - b)
     const isInteger = sortNumbers.length % 2 === 0
     const y = []
     if(!isInteger){
@@ -34,7 +35,7 @@ function getMedian(...numbers){
     }
     return y
 }
-console.log(getMedian(1, 2, 3, 4))
+console.log(getMedian(1, 2, 3, 4, 2.3, 6.8))
 
 5
 function filterEvenNumbers(...numbers){

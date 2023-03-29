@@ -23,18 +23,18 @@ const students = [{
     cosmology: [5, 5, 5, 5]
     }
     }];
-
-
-// function getSubjects (student) {
-//     const res = []
-//     Object.keys(student.subjects).forEach(function(key,index) {
-//         const upperCase = (key[0].toUpperCase() + key.slice(1).toLowerCase()).replace("_", " ")
-//         res.push(upperCase)
-//     });
-//     return res
-// }
-// console.log(getSubjects(student))
-///////////////////////////////////////////////////////////////////
+/* --------------------------------------------------------------------------------------------------*/
+const student = students[0]
+function getSubjects (student) {
+    const res = []
+    Object.keys(student.subjects).forEach(function(key,index) {
+        const upperCase = (key[0].toUpperCase() + key.slice(1).toLowerCase()).replace("_", " ")
+        res.push(upperCase)
+    });
+    return res
+}
+console.log(getSubjects(student))
+// /*----------------------------------------------------------------------------------------------------*/
 // function getSubjects (student) {
 //     const res = [];
 //     const objectKey = Object.keys(student.subjects)
@@ -46,14 +46,67 @@ const students = [{
 //     return res
 // }
 // console.log(getSubjects(student))
+// /*----------------------------------------------------------------------------------------------------------- */
 
-console.log(students)
-const student = students[0]
-
-function getAverageMark(student){
-
-    const entr = Object.entries(student.subjects)
-    entr.map(([index, item]) => console.log(index, item))
-    return entr
+const getAverageMark = (student) =>  {
+    const studentMarks = Object.values(student.subjects).flat();
+    const sum = studentMarks.reduce((total, mark) => total + mark, 0);
+    const averageMark = (sum / studentMarks.length).toFixed(2)
+    return averageMark;
 }
-getAverageMark(student)
+console.log(getAverageMark(student))
+
+// /*---------------------------------------------------------------------------------------------------------------*/
+const getStudentInfo = (student) =>{
+    let studentInfo = {}
+    studentInfo['course'] = student.course
+    studentInfo['name']= student.name
+    studentInfo['averageMark'] = getAverageMark(student)
+    return studentInfo
+}
+console.log(getStudentInfo(student))
+/*------------------------------------------------------------------------------------------------------------------*/
+
+function getStudentsNames(students){
+    let i = 0;
+    let res = []
+    while( i < students.length){
+        const name = Object.values(students[i].name).join('');
+        i++
+        res.push(name)
+    }return res.sort()
+
+}
+console.log(getStudentsNames(students))
+/*------------------------------------------------------------------------------------------------------------------*/
+const getBestStudent = (students) =>  {
+    let bestMark = []
+    let bestStudent = '';
+    for(let i = 0; i < students.length; i++){
+        const studentMarks = Object.values(students[i].subjects).flat();
+        const sum = studentMarks.reduce((total, mark) => total + mark, 0);
+            if (sum > bestMark){
+                bestMark = sum;
+                bestStudent = students[i].name
+            }
+}return bestStudent
+}
+console.log(getBestStudent(students))
+/*------------------------------------------------------------------------------------------------------------------*/
+const test = 'тест'
+function calculateWordLetters(test){
+    const letters = {};
+  for (let i = 0; i < test.length; i++) {
+    const letter = test[i];
+    if (letters[letter]) {
+      letters[letter]++;
+    } else {
+      letters[letter] = 1;
+    }
+  }
+  
+  return letters;
+}
+console.log(calculateWordLetters(test))
+
+
