@@ -40,6 +40,25 @@ class Students {
     }
 }
 
+class BudgetStudent extends Students {
+    constructor(course, university, fullName) {
+        super(course, university, fullName);
+        this.sum = 1400;
+        setInterval(() => {
+            console.log(this.getScholarship());}, 30000);
+    }
+
+    getScholarship() {
+        if (!this.dismissed && this.getAverageMark() >= 4.0) {
+            return `Ви отримали ${this.sum} грн. стипендії`;
+        } else {
+            return `Ви виключені`;
+        }
+    }
+}
+
+
+
 let student = new Students( 1, 'Вищої Школи Психотерапії', 'Остап Родоманський Бендер', );
 
 console.log(student.getInfo());
@@ -51,21 +70,6 @@ student.dismiss()
 console.log(`Якщо студент виключен: ${student.getAverageMark()}`);
 student.recover()
 console.log(`Якщо студент поновлен: ${student.marks}`);
-/*---------------------------------Advanced-------------------------------------------------------------------------------*/
-class BudgetStudent extends Students {
-    constructor(course, university, fullName) {
-        super(course, university, fullName);
-        this.sum = 1400;
-    }
-
-    getScholarship() {
-        if (!this.dismissed && this.marks < 4.0) {
-            return `Ви виключені`;
-        } else {
-            return `Ви отримали ${this.sum} грн. стипендії`;
-        }
-    }
-}
-
 const budget = new BudgetStudent();
 console.log(budget.getScholarship());
+/*---------------------------------Advanced-------------------------------------------------------------------------------*/
