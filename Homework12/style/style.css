@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Sigmar&display=swap');
+
 *{
     font-size: 30px;
 }
@@ -18,7 +20,7 @@ button{
     cursor: pointer;
     text-shadow: #000000 1px 0 25px;
     transition: 0.7s;
-    font-family: fantasy;
+    font-family: 'Sigmar', cursive;
 }
 button:hover{
     text-shadow: #000000 25px 0 5px;
@@ -27,7 +29,7 @@ button:hover{
 input{
     background-color: #ffffffd7;
     border-style: dotted;
-    font-family: fantasy;
+    font-family: 'Sigmar', cursive;
 }
 .container{
     max-width: 1110px;
