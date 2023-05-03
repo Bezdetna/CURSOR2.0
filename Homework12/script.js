@@ -1,42 +1,31 @@
-const getFilmButtom = document.querySelectorAll("#film-button");
-
-getFilmButtom.forEach((el) => {
-  const onClick = () => {
-    getFilmInform();
-    el.removeEventListener('click', onClick);
-  };
-  el.addEventListener("click", onClick);
-});
-
-function getFilmInform () {
-  fetch(`https://swapi.dev/api/films/`)
-  .then(response => response.json())
-  .then((film) => {
-    film
-  })
-}
-
 const getCharactersButtom = document.querySelectorAll("#characters-button")
+const input = document.getElementById('input')
+const buttonInput = document.querySelectorAll('#button-input')
+let contentInput = ""
+
 function getInfoCharacters({name, birth_year, gender}) {
   const characterCard =  `
-    <div class="card-character">
-      <div class="info-character">
-        <h3 class="card-name">${name}</h3>
-        <h4 class="card-year">${birth_year}</h4>
-        <h4 class="card-gender">${gender}</h4>
+    <div class="card">
+      <div class="info">
+        <h3 class="card1">${name}</h3>
+        <h4 class="card2">${birth_year}</h4>
+        <h4 class="card3">${gender}</h4>
       </div>
     </div>
   `;
   document.getElementsByClassName('general-info')[0].innerHTML += characterCard;
 }
-getCharactersButtom.forEach((el) => {
-  const onClick = () => {
-    getInfoCharacter ();
+
+buttonInput.forEach((el) => {
+  const onClick = (event) => {
+    event.preventDefault();
+    getInfoCharacter(input.value);
     el.removeEventListener('click', onClick);
-  };
-  el.addEventListener("click", onClick);
   }
-)
+   
+  el.addEventListener("click", onClick);
+});
+
 function getInfoCharacter (){     
   fetch('https://swapi.dev/api/films/2/')
   .then(response => {
@@ -45,7 +34,8 @@ function getInfoCharacter (){
     const characters = data.characters;
     characters.forEach(character => {
       fetch(character)
-        .then(response => response.json())
+        .then(response => {
+          return response.json()})
         .then(characterData => {
           getInfoCharacters(characterData)
         });
@@ -55,39 +45,61 @@ function getInfoCharacter (){
 
 
 
-// const getPlanetButtom = document.getElementById("planet-button")
+
+  const getPlanetButton = document.querySelectorAll("#planet-button")
+  function getInfoPlanet({ name, climate, diameter }) {
+    const planetCard =  `
+      <div class="card">
+        <div class="info-character">
+          <h3 class="card1">${name}</h3>
+          <h4 class="card2">${climate}</h4>
+          <h4 class="card3">${diameter}</h4>
+        </div>
+      </div>
+    `;
+    document.getElementsByClassName('general-info')[0].innerHTML += planetCard;
+  }
 
 
-// getPlanetButtom.addEventListener('click', (e) => {
-//   fetch("https://swapi.dev/api/planets/1/")
-//   .then(response => console.log(response.json()))
-//   .then(planet => console.log(planet)
-// )})
+function getPlanetInfo (){
+  fetch(`https://swapi.dev/api/planets/`)
+    .then(response => {
+      return response.json()
+    })
+    .then(planet => {
+      const aboutPlanet = planet.results;
+      aboutPlanet.forEach(planetsInfo =>{
+        fetch(planetsInfo.url)
+        .then(response => {
+          return response.json()})
+        .then(planetCard => {
+          getInfoPlanet(planetCard)
+        })
+      })
+    }
+  )}
+
+  getPlanetButton.forEach((el) => {
+    const onClick = () => {
+      getPlanetInfo ();
+      el.removeEventListener('click', onClick);
+    };
+    el.addEventListener("click", onClick);
+    }
+  )
 
 
 
-// const input = document.getElementById('input')
-// const buttonInput = document.getElementById('button-input')
-// let contentInput = ""
-
-// input.addEventListener('input', (e => {
-//   contentInput = e.target.value
-// }))
-
-
-// buttonInput.addEventListener('click', sendPost)
-// function sendPost (){
-//   fetch("https://swapi.dev/api/planets/", {
-//     method: 'POST',
-//     body: JSON.stringify({
-//       title: contentInput,
-//       userID: 1,
-//     }),
-//     headers: {
-//       "Content-Type": "application/json",
-//     }
-// })}
 
 
 
+
+
+
+//const filmsContent = [film1, film2, film3, film4, film5]
+
+
+
+
+//title,
 

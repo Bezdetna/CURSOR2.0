@@ -1,10 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Sigmar&display=swap');
+
 *{
     font-size: 30px;
 }
 
 body{
     background-color: black;
-    background-image: url(https://images4.alphacoders.com/910/thumb-1920-91004.jpg);
+    background-image: url(https://cdn.wallpapersafari.com/57/19/4Qon3w.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-position-y: 30%;
@@ -18,16 +20,17 @@ button{
     cursor: pointer;
     text-shadow: #000000 1px 0 25px;
     transition: 0.7s;
-    font-family: fantasy;
+    font-family: 'Sigmar', cursive;
 }
 button:hover{
-    text-shadow: #000000 25px 0 5px;
+    text-shadow: #1F42B1 25px 0 5px;
     transition: 0.5s;
+    scale: (1, 0.4);
 }
 input{
     background-color: #ffffffd7;
     border-style: dotted;
-    font-family: fantasy;
+    font-family: 'Sigmar', cursive;
 }
 .container{
     max-width: 1110px;
@@ -63,7 +66,7 @@ input{
     border-radius: 10%;
     justify-items: center;
 }
-.card-character{
+.card{
     padding: 5px 5px 5px 0;
     display: grid;
     width: 90%;
@@ -74,7 +77,7 @@ input{
     background-color: #121415;
     color: #ffffff;
     margin: 10px 0 10px 0;
-    border-radius: 30%;
+    border-radius: 10%;
     font-style: normal;
     font-family: system-ui;
 }
