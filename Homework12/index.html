@@ -19,9 +19,9 @@
     <main>
         <section class="container">
             <div class="button-box">
-                <button id="film-button">
+                <!-- <button id="film-button">
                     Film
-                </button>
+                </button> -->
                 <button id="planet-button">
                     Planet
                 </button>
@@ -29,15 +29,27 @@
                     Characters
                 </button>
             </div>
-            <form class="search-box">
-                <input id='input' type="text" placeholder="Choose from 1-5">
-                <button id='button-input'>Get Info </button>
-            </form>
+            <div class="search-box">
+                <input id='input' type="text" placeholder="Choose from 1-6">
+                <button id='button-input' onclick="document.getElementById('input').value">Get Info </button>
+            </div>
         </section>
-        <section class="container general-info">
-    
-        </section>
+        <section class="container general-info"></section>
+        <section class="container info-film"></section>
     </main>
+    <footer>
+        <!-- <section class="container">
+            <div class="box-button">
+                <button id = "eng" class ="btn" onclick="changeLanguage('eng')">
+                    English
+                </button>
+                <button id = "wookiee" class ="btn" onclick="changeLanguage('wookiee')">
+                    Wookiee
+                </button>
+            </div>
+
+        </section>
+    </footer> -->
     <script src="./script.js"></script>
 </body>
 </html>
