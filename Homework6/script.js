@@ -1,4 +1,4 @@
-const students = [{
+export const students = [{
     name: "Tanya",
     course: 3,
     subjects: {
@@ -24,8 +24,8 @@ const students = [{
     }
     }];
 /* --------------------------------------------------------------------------------------------------*/
-const student = students[0]
-function getSubjects (student) {
+export const student = students[0]
+export function getSubjects (student) {
     const res = []
     Object.keys(student.subjects).forEach(function(key,index) {
         const upperCase = (key[0].toUpperCase() + key.slice(1).toLowerCase()).replace("_", " ")
@@ -33,7 +33,7 @@ function getSubjects (student) {
     });
     return res
 }
-console.log(getSubjects(student))
+
 // /*----------------------------------------------------------------------------------------------------*/
 // function getSubjects (student) {
 //     const res = [];
@@ -54,7 +54,6 @@ const getAverageMark = (student) =>  {
     const averageMark = (sum / studentMarks.length).toFixed(2)
     return averageMark;
 }
-console.log(getAverageMark(student))
 
 // /*---------------------------------------------------------------------------------------------------------------*/
 const getStudentInfo = (student) =>{
@@ -64,7 +63,6 @@ const getStudentInfo = (student) =>{
     studentInfo['averageMark'] = getAverageMark(student)
     return studentInfo
 }
-console.log(getStudentInfo(student))
 /*------------------------------------------------------------------------------------------------------------------*/
 
 function getStudentsNames(students){
@@ -77,7 +75,7 @@ function getStudentsNames(students){
     }return res.sort()
 
 }
-console.log(getStudentsNames(students))
+
 /*------------------------------------------------------------------------------------------------------------------*/
 const getBestStudent = (students) =>  {
     let bestMark = []
@@ -91,7 +89,7 @@ const getBestStudent = (students) =>  {
             }
 }return bestStudent
 }
-console.log(getBestStudent(students))
+
 /*------------------------------------------------------------------------------------------------------------------*/
 const test = 'тест'
 function calculateWordLetters(test){
@@ -107,6 +105,6 @@ function calculateWordLetters(test){
   
   return letters;
 }
-console.log(calculateWordLetters(test))
+
 
 

@@ -1,9 +1,8 @@
 // Функція, яка отримує будь-яке число та виводить найбільшу цифру в цьому числі.
 function getMaxDigit(number){
     let getMaxDigit = Math.max(...number.toString().split(""))
-    console.log(`Найбільша цифра у числі ${number}: ${getMaxDigit}`)
 }
-getMaxDigit(74574549)
+
 
 // Функцію, яка визначає ступінь числа.
 function pow(a, b) {
@@ -13,13 +12,12 @@ function pow(a, b) {
     }
     return result;
   }
-console.log(pow(2, 3))
 
 // Функція, яка форматує ім'я, роблячи першу букву великою.
 function uppercase(name) {
     return name.charAt(0).toUpperCase() + name.slice(1).toLowerCase()
   }
-  console.log(uppercase("alisa"))
+  export{uppercase};
 
 
 // Функція, яка повертає випадкове ціле число
@@ -31,7 +29,7 @@ function getRandom(N, M){
     }
     
 }
-console.log(getRandom(10, 20))
+
 
 
 //Функція, яка рахує скільки разів певна буква повторюється в слові.
@@ -44,12 +42,12 @@ function countLetter(word,letter){
         }
     }
 countLetter("Розгніваний", "н")
-console.log(sum)
+
 
 //Функція, яка перевіряє, чи є слово паліндромом.
 function isPalindrome(str) {
     const reversedStr = str.split('').reverse().join('')
     return str === reversedStr
 }
-let wordPalindrom = isPalindrome("ротатор")
-console.log(wordPalindrom)
+
+

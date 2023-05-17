@@ -1,4 +1,4 @@
-const students = ["Олександр", "Ігор", "Олена", "Іра","Олексій","Світлана",]
+export const students = ["Олександр", "Ігор", "Олена", "Іра","Олексій","Світлана",]
 const themes = [
     "Диференційне рівняння", 
     "Теорія автоматів",
@@ -7,9 +7,9 @@ const themes = [
 const marks = [4, 5, 5, 3, 4, 5];
 
 //Сортуємо на дівчинка /хлопчик
-let girls = []
-let boys = []
-    for(let i = 0; i < students.length; i++){
+export let girls = []
+export let boys = []
+for(let i = 0; i < students.length; i++){
         let name = students[i]
             if(name.endsWith('а')){
                 girls.push(name)
@@ -19,7 +19,7 @@ let boys = []
     }
 
 //Розділяємо на пари.
-const studentPairs =((student1, student2) => {
+export const studentPairs =((student1, student2) => {
     const pairs = [];
     for (let i = 0; i < (boys.length, girls.length); i++) {
         pairs.push([boys[i] + " і " +girls[i]]);
@@ -52,12 +52,3 @@ const studensMarks = pairsStudentThemes(students, marks)
 const result = sumRes(pairsThemes)
 
 
-console.log(girls, boys)
-document.writeln('<h2>Розділяємо на пари</h2>')
-document.writeln(pairs)
-document.writeln('<h2>Роспріділяємо теми по парах</h2>')
-document.writeln(pairsThemes)
-document.writeln('<h2>Cтавимо кожному студенту оцінку.</h2>')
-document.writeln(studensMarks)
-document.writeln('<h2>Ставимо оцінки від 1 до 5, кожній парі студентів з назначеною темою</h2>')
-document.writeln(result)

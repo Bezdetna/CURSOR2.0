@@ -3,14 +3,14 @@ const section = document.createElement('section');
       document.body.appendChild(section);
       section.style.cssText = 'display: grid; grid-template-columns: repeat(5, 50px); grid-template-row: repeat(5, 50px);'
 
-function getRandomColorRGB() {
+export function getRandomColorRGB() {
         var r = Math.floor(Math.random() * 256);
         var g = Math.floor(Math.random() * 256);
         var b = Math.floor(Math.random() * 256);
         return "rgb(" + r + "," + g + "," + b + ")";
       }
 
-function generateBlocks(num) {
+export function generateBlocks(num) {
     for (let i = 0; i < num; i++) {
         const div = document.createElement('div');
             div.style.cssText = 'width: 50px; height: 50px;'
@@ -24,5 +24,5 @@ function generateBlocksInterval() {
       div.style.backgroundColor = getRandomColorRGB();
     });
   }
-setInterval(generateBlocksInterval, 1000);
-generateBlocks(25);
+// setInterval(generateBlocksInterval, 1000);
+// generateBlocks(25);

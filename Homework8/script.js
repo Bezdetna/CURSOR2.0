@@ -1,4 +1,4 @@
-class Students {
+export class Students {
     constructor(course, university, fullName,){
         this.course = course
         this.university = university
@@ -59,17 +59,17 @@ class BudgetStudent extends Students {
 
 
 
-let student = new Students( 1, 'Вищої Школи Психотерапії', 'Остап Родоманський Бендер', );
+export let studentInfo = new Students( 1, 'Вищої Школи Психотерапії', 'Остап Родоманський Бендер', );
 
-console.log(student.getInfo());
-console.log(student.marks); 
-student.marks = 5;
-console.log(student.marks); 
-console.log(`Середня оцінка: ${student.getAverageMark()}.`);
-student.dismiss()
-console.log(`Якщо студент виключен: ${student.getAverageMark()}`);
-student.recover()
-console.log(`Якщо студент поновлен: ${student.marks}`);
-const budget = new BudgetStudent();
-console.log(budget.getScholarship());
+// console.log(student.getInfo());
+// console.log(student.marks); 
+// student.marks = 5;
+// console.log(student.marks); 
+// console.log(`Середня оцінка: ${student.getAverageMark()}.`);
+// student.dismiss()
+// console.log(`Якщо студент виключен: ${student.getAverageMark()}`);
+// student.recover()
+// console.log(`Якщо студент поновлен: ${student.marks}`);
+// const budget = new BudgetStudent();
+// console.log(budget.getScholarship());
 /*---------------------------------Advanced-------------------------------------------------------------------------------*/

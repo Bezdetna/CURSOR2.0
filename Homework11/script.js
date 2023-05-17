@@ -1,4 +1,4 @@
-async function getRandomChinese(length){
+export async function getRandomChinese(length){
     let i = 0;
     let result = [];
     while( i < length){
@@ -8,4 +8,4 @@ async function getRandomChinese(length){
         i++
     }return result.join(' ');
  }
- getRandomChinese(4).then(res => console.log(res))
+//  getRandomChinese(4).then(res => console.log(res))
